@@ -11,8 +11,8 @@ class EcranTitre extends Phaser.Scene{
 
         this.load.image('ecranTitre','assets/menu/ecran_titre.png');
         this.load.spritesheet('boutonJouer','assets/menu/bouton_jouer.png', { frameWidth: 260, frameHeight: 108 });
-        this.load.spritesheet('bontonCommande','assets/menu/Bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
-        this.load.spritesheet('bontonSuite','assets/menu/Bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
+        this.load.spritesheet('bontonCommande','assets/menu/bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
+        this.load.spritesheet('bontonSuite','assets/menu/bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
         this.load.image('panneauCommande','assets/menu/panneau_commande.png');
         
         this.load.image('parallaxe3','assets/parallaxe/parallaxe_3.png');
@@ -27,18 +27,18 @@ class EcranTitre extends Phaser.Scene{
         this.load.audio('bruit_execution', 'assets/audio/bruit_execution.mp3')
         this.load.audio('bruit_fiole', 'assets/audio/bruit_fiole.mp3')
 
-        this.load.spritesheet('boutonPause','assets/menu/Bouton_pause.png', { frameWidth: 55, frameHeight: 60 });
+        this.load.spritesheet('boutonPause','assets/menu/bouton_pause.png', { frameWidth: 55, frameHeight: 60 });
         this.load.image('menuPause','assets/menu/Panneau_pause.png');
-        this.load.spritesheet('flecheDroite','assets/menu/bouton_mobile/Bouton_fleche_droite.png', { frameWidth: 48, frameHeight: 48 });
-        this.load.spritesheet('flecheGauche','assets/menu/bouton_mobile/Bouton_fleche_gauche.png', { frameWidth: 48, frameHeight: 48 });
-        this.load.spritesheet('flecheHaut','assets/menu/bouton_mobile/Bouton_fleche_haut.png', { frameWidth: 48, frameHeight: 48 });
-        this.load.spritesheet('flecheBas','assets/menu/bouton_mobile/Bouton_fleche_bas.png', { frameWidth: 48, frameHeight: 48 });
-        this.load.spritesheet('boutonFumi','assets/menu/bouton_mobile/Bouton_fumi.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheDroite','assets/menu/bouton_mobile/bouton_fleche_droite.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheGauche','assets/menu/bouton_mobile/bouton_fleche_gauche.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheHaut','assets/menu/bouton_mobile/bouton_fleche_haut.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheBas','assets/menu/bouton_mobile/bouton_fleche_bas.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('boutonFumi','assets/menu/bouton_mobile/bouton_fumi.png', { frameWidth: 48, frameHeight: 48 });
 
         this.load.image('texteChope','assets/tuto/texte_chope.png');
-        this.load.image('texteDebut','assets/menu/Texte_debut.png');
+        this.load.image('texteDebut','assets/menu/texte_debut.png');
 
-        this.load.image('CoffreGris','assets/menu/coffre/Coffre_gris.png');
+        this.load.image('CoffreGris','assets/menu/coffre/coffre_gris.png');
         this.load.image('CoffreVert','assets/menu/coffre/coffre_vert_menu.png');
         this.load.image('CoffreBleu','assets/menu/coffre/coffre_bleu_menu.png');
         this.load.image('CoffreMarron','assets/menu/coffre/coffre_marron_menu.png');
@@ -55,23 +55,23 @@ class EcranTitre extends Phaser.Scene{
 
         this.load.spritesheet('explosionFumi', 'assets/FX/explosion_fumi.png', { frameWidth: 380, frameHeight: 400 });
         this.load.image('fleche','assets/spritesheet/fleche.png');
-        this.load.image('bombe','assets/item/Bombe_Loot.png');
-        this.load.image('fiole','assets/item/Fiole.png');
+        this.load.image('bombe','assets/item/bombe_Loot.png');
+        this.load.image('fiole','assets/item/fiole.png');
         this.load.image('clef','assets/item/clef.png');
 
-        this.load.image('tresorVert','assets/item/Coffre_Vert.png');
-        this.load.image('tresorBleu','assets/item/Coffre_Bleu.png');
-        this.load.image('tresorMarron','assets/item/Coffre_Marron.png');
-        this.load.image('tresorRouge','assets/item/Coffre_Rouge.png');
+        this.load.image('tresorVert','assets/item/coffre_Vert.png');
+        this.load.image('tresorBleu','assets/item/coffre_Bleu.png');
+        this.load.image('tresorMarron','assets/item/coffre_Marron.png');
+        this.load.image('tresorRouge','assets/item/coffre_Rouge.png');
 
         this.load.image('porte','assets/item/Porte_deverouille.png');
         
-        this.load.image('barreFumi0','assets/barre_fumi/Barre_fumi_0.png');
-        this.load.image('barreFumi1','assets/barre_fumi/Barre_fumi_1.png');
-        this.load.image('barreFumi2','assets/barre_fumi/Barre_fumi_2.png');
-        this.load.image('barreFumi3','assets/barre_fumi/Barre_fumi_3.png');
-        this.load.image('barreFumi4','assets/barre_fumi/Barre_fumi_4.png');
-        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');
+        this.load.image('barreFumi0','assets/barre_fumi/barre_fumi_0.png');
+        this.load.image('barreFumi1','assets/barre_fumi/barre_fumi_1.png');
+        this.load.image('barreFumi2','assets/barre_fumi/barre_fumi_2.png');
+        this.load.image('barreFumi3','assets/barre_fumi/barre_fumi_3.png');
+        this.load.image('barreFumi4','assets/barre_fumi/barre_fumi_4.png');
+        this.load.image('barreFumi5','assets/barre_fumi/barre_fumi_5.png');
              
     }
     create(){
