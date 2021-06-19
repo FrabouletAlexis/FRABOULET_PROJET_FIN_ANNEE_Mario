@@ -7,7 +7,7 @@
   <image source="tile_32.png" width="64" height="64"/>
  </tileset>
  <tileset firstgid="5" name="Decors" tilewidth="32" tileheight="32" tilecount="2240" columns="56">
-  <image source="../../../../Version_BETA/version_BETA/assets/tiles/Decors.png" width="1792" height="1280"/>
+  <image source="Decors.png" width="1792" height="1280"/>
  </tileset>
  <layer id="4" name="Fond" width="345" height="93">
   <data encoding="csv">
