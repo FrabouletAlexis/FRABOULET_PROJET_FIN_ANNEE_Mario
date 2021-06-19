@@ -957,7 +957,8 @@ class LevelPart1 extends Phaser.Scene{
 
         if (gameOver){
             player.setVelocityX(0);
-            gameOvertext = this.add.text(896/2, 448/2, 'GAME OVER', { fontSize: '32px', fill: '#48E14E' }).setScrollFactor(0).setDepth(1);
+            gameOvertext = this.add.text(896/2, 448/2, 'Game over', { fontSize : '32px', fill: '#48E14E' }).setScrollFactor(0).setDepth(1);
+            
             this.input.on('pointerdown', function (pointer) {
                 restart = true;
                 
