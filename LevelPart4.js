@@ -577,12 +577,183 @@ class LevelPart4 extends Phaser.Scene{
             
 
         }, this)
+        if (commandeMobile){
+            flecheDroite = this.add.sprite(30, 418, 'flecheDroite').setScrollFactor(0).setDepth(13).setInteractive({ cursor: 'pointer' });
+            flecheGauche = this.add.sprite(90, 418, 'flecheGauche').setScrollFactor(0).setDepth(13).setInteractive({ cursor: 'pointer' });
+            flecheHaut = this.add.sprite(866, 358, 'flecheHaut').setScrollFactor(0).setDepth(13).setInteractive({ cursor: 'pointer' });
+            flecheBas = this.add.sprite(866, 418, 'flecheBas').setScrollFactor(0).setDepth(13).setInteractive({ cursor: 'pointer' });
+            buttonFumi = this.add.sprite(806, 418, 'boutonFumi').setScrollFactor(0).setDepth(13).setInteractive({ cursor: 'pointer' });
+             /////////////////////////////   
+            // ANIME BOUTON /////////////
+            ///////////////////////////// 
+
+    /////////// BOUTON DROITE/////////////
+            this.anims.create({
+                key: 'Droite',
+                frames: [ { key: 'flecheDroite', frame: 0 } ],
+                frameRate: 20
+            })
+            this.anims.create({
+                key: 'DroiteActive',
+                frames: [ { key: 'flecheDroite', frame: 1 } ],
+                frameRate: 20
+            })
+
+            flecheDroite.on('pointerout', function(){
+                flecheDroite.anims.play('Droite',true);
+
+            }, this)
+            flecheDroite.on('pointerover', function(){
+                flecheDroite.anims.play('DroiteActive',true);
+
+            }, this)
+            flecheDroite.on('pointerdown', function(){
+                droite = true;
+            }, this)
+            flecheDroite.on('pointerup', function(){
+                droite = false;
+            }, this)
+
+    /////////// BOUTON GAUCHE/////////////
+            this.anims.create({
+                key: 'Gauche',
+                frames: [ { key: 'flecheGauche', frame: 0 } ],
+                frameRate: 20
+            })
+            this.anims.create({
+                key: 'GaucheActive',
+                frames: [ { key: 'flecheGauche', frame: 1 } ],
+                frameRate: 20
+            })
+
+            flecheGauche.on('pointerout', function(){
+                flecheGauche.anims.play('Gauche',true);
+
+            }, this)
+            flecheGauche.on('pointerover', function(){
+                flecheGauche.anims.play('GaucheActive',true);
+
+            }, this)
+            flecheGauche.on('pointerdown', function(){
+                gauche = true;
+            }, this)
+            flecheGauche.on('pointerup', function(){
+                gauche = false;
+            }, this)
+
+    /////////// BOUTON HAUT/////////////
+            this.anims.create({
+                key: 'Haut',
+                frames: [ { key: 'flecheHaut', frame: 0 } ],
+                frameRate: 20
+            })
+            this.anims.create({
+                key: 'HautActive',
+                frames: [ { key: 'flecheHaut', frame: 1 } ],
+                frameRate: 20
+            })
+
+            flecheHaut.on('pointerout', function(){
+                flecheHaut.anims.play('Haut',true);
+
+            }, this)
+            flecheHaut.on('pointerover', function(){
+                flecheHaut.anims.play('HautActive',true);
+
+            }, this)
+            flecheHaut.on('pointerdown', function(){
+                haut = true;
+            }, this)
+            flecheHaut.on('pointerup', function(){
+                haut = false;
+            }, this)
+    /////////// BOUTON BAS/////////////
+            this.anims.create({
+                key: 'Bas',
+                frames: [ { key: 'flecheBas', frame: 0 } ],
+                frameRate: 20
+            })
+            this.anims.create({
+                key: 'BasActive',
+                frames: [ { key: 'flecheBas', frame: 1 } ],
+                frameRate: 20
+            })
+
+            flecheBas.on('pointerout', function(){
+                flecheBas.anims.play('Bas',true);
+
+            }, this)
+            
+            flecheBas.on('pointerover', function(){
+                flecheBas.anims.play('BasActive',true);
+
+            }, this)
+
+            flecheBas.on('pointerdown', function(){
+                bas = true;
+            }, this)
+            flecheBas.on('pointerup', function(){
+                bas = false;
+            }, this)
+
+            
+            
+
+    /////////// BOUTON FUMI/////////////
+            this.anims.create({
+                key: 'Fumi',
+                frames: [ { key: 'boutonFumi', frame: 0 } ],
+                frameRate: 20
+            })
+            this.anims.create({
+                key: 'FumiActive',
+                frames: [ { key: 'boutonFumi', frame: 1 } ],
+                frameRate: 20
+            })
+
+            buttonFumi.on('pointerout', function(){
+                buttonFumi.anims.play('Fumi',true);
+
+            }, this)
+            buttonFumi.on('pointerover', function(){
+                buttonFumi.anims.play('FumiActive',true);
+
+            }, this)
+            buttonFumi.on('pointerdown', function(){
+                utiliseFumi = true;
+                console.log('fumi' + utiliseFumi)
+            }, this)
+            buttonFumi.on('pointerup', function(){
+                utiliseFumi = false;
+                console.log('fumi' + utiliseFumi)
+            }, this)
+            
+        }
 
     }
     update(){
 
         if (player.y > platforms.height){
             gameOver = true;
+        }
+
+        if (attrape && !tutoATerre && onGround){
+            tutoATerre = true;
+            this.physics.pause();
+            //this.enemies.anims.play('soldatExecution', false);
+            if (commandeMobile){
+                textTuto = this.add.image(896/2, 448/2, 'texteChopeMobile').setScrollFactor(0).setDepth(11);
+            }
+            else {
+                textTuto = this.add.image(896/2, 448/2, 'texteChope').setScrollFactor(0).setDepth(11);
+            }
+            
+            
+        }
+        if ( (cursors2.E.isDown || utiliseFumi) && tutoATerre ){
+            this.physics.resume();
+            
+            textTuto.destroy(true,true);
         }
 
           /////////////////////////////   
@@ -649,11 +820,19 @@ class LevelPart4 extends Phaser.Scene{
             
         }
 
+         /////////////////////////////   
+         // GAME OVER ///////////////
+        /////////////////////////////
+        
+
         if (gameOver){
             player.setVelocityX(0);
             gameOvertext = this.add.text(896/2, 448/2, 'GAME OVER', { fontSize: '32px', fill: '#48E14E' }).setScrollFactor(0).setDepth(1);
-            
-            if (cursors2.R.isDown){
+            this.input.on('pointerdown', function (pointer) {
+                restart = true;
+                
+            })
+            if (cursors2.R.isDown || restart){
                 this.scene.restart();
                 gameOver = false;
                 attrape = false;
@@ -662,6 +841,7 @@ class LevelPart4 extends Phaser.Scene{
                 invincible = false;
                 nbFumigene = 5;
                 coffreRouge = false;
+                restart = false;
                 
             }
 
@@ -680,10 +860,9 @@ class LevelPart4 extends Phaser.Scene{
      // CONTROLE CLAVIER /////////
     ///////////////////////////// 
     
-        if ((cursors.left.isDown || cursors2.Q.isDown)&& attrape == false)
+        if ((cursors.left.isDown || cursors2.Q.isDown || droite )&& attrape == false)
         {   
             if (gameOver == false){
-                
                 player.setVelocityX(-vitesse_joueur*speed);
                 player.anims.play("course", true);
                 player.setFlipX(true);
@@ -692,7 +871,7 @@ class LevelPart4 extends Phaser.Scene{
             
         }
         
-        else if ((cursors.right.isDown || cursors2.D.isDown)&& attrape == false)
+        else if ((cursors.right.isDown || cursors2.D.isDown ||gauche)&& attrape == false)
         {
 
             if (gameOver == false){
@@ -702,7 +881,7 @@ class LevelPart4 extends Phaser.Scene{
             }
         }
         
-        else if (((cursors.down.isDown || cursors2.S.isDown)&& attrape == false && onGround == false && sautTete == false) && gameOver == false){//direction vers le bas /////////////////////
+        else if (((cursors.down.isDown || cursors2.S.isDown || bas)&& attrape == false && onGround == false && sautTete == false) && gameOver == false){//direction vers le bas /////////////////////
             player.setVelocityY(vitesseAttaque);
             attaque = true;
         }
@@ -715,7 +894,7 @@ class LevelPart4 extends Phaser.Scene{
             player.setVelocityX(0);
         }
                 //saut /////////////////////
-        if (((cursors.up.isDown && onGround || cursors2.Z.isDown && onGround || cursors2.SPACE.isDown && onGround) && attrape == false) && gameOver == false )
+        if (((cursors.up.isDown || cursors2.Z.isDown || cursors2.SPACE.isDown || haut) && onGround && attrape == false) && gameOver == false )
         {
             player.setVelocityY(-vitesse_saut);
 
@@ -746,7 +925,7 @@ class LevelPart4 extends Phaser.Scene{
         ////// DASH FUMIGENE /////////////////
         /////////////////////////////////////
 
-        if ((cursors.right.isDown || cursors.left.isDown || cursors2.D.isDown || cursors2.Q.isDown) && libre && verifDash && nbFumigene > 0 && !attrape && !gameOver && !invincible){
+        if ((cursors.right.isDown || cursors.left.isDown || cursors2.D.isDown || cursors2.Q.isDown || droite || gauche) && (libre || utiliseFumi) && verifDash && nbFumigene > 0 && !attrape && !gameOver && !invincible){
             this.bruitfumi.play()
             nbFumigene --;
             verifDash = false;
@@ -768,14 +947,14 @@ class LevelPart4 extends Phaser.Scene{
             setTimeout(function(){verifDash = true}, 800);
 
         }
-         if (animeFumerFX){
+        if (animeFumerFX){
             //fumerFX = this.add.sprite(player.x,player.y-125, 'explosionFumi');
             setTimeout(function(){fumerFX.anims.play('exploseFumi',true)}, 0);
             //setTimeout(function(){fumerFX.destroy();}, 1000);
             setTimeout(function(){animeFumerFX = false}, 1000);
             if (!animeFumerFX){
                 fumerFX.destroy();
-             }
+            }
         }
 
       /////////////////////////////   

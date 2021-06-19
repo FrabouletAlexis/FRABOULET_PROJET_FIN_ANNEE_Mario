@@ -95,6 +95,7 @@ var barreFumiX = 200;
 var barreFumiY = 60;
 
 // joueur/////////////////
+var restart = false;
 var sautTete = false;
 var nbFumigene = 5;
 var attaque = false;
@@ -949,11 +950,19 @@ class LevelPart1 extends Phaser.Scene{
             
         }
 
+         /////////////////////////////   
+         // GAME OVER ///////////////
+        /////////////////////////////
+        
+
         if (gameOver){
             player.setVelocityX(0);
             gameOvertext = this.add.text(896/2, 448/2, 'GAME OVER', { fontSize: '32px', fill: '#48E14E' }).setScrollFactor(0).setDepth(1);
-            
-            if (cursors2.R.isDown){
+            this.input.on('pointerdown', function (pointer) {
+                restart = true;
+                
+            })
+            if (cursors2.R.isDown || restart){
                 this.scene.restart();
                 gameOver = false;
                 attrape = false;
@@ -962,6 +971,7 @@ class LevelPart1 extends Phaser.Scene{
                 invincible = false;
                 nbFumigene = 5;
                 coffreVert = false;
+                restart = false;
                 
             }
 
