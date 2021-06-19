@@ -8,7 +8,7 @@ class LettreDebut extends Phaser.Scene{
         
     }
     preload(){
-        this.load.image('ecranTitre','assets/menu/ecran_titre.png');
+        /*this.load.image('ecranTitre','assets/menu/ecran_titre.png');
         this.load.spritesheet('boutonJouer','assets/menu/bouton_jouer.png', { frameWidth: 260, frameHeight: 108 });
         this.load.spritesheet('bontonCommande','assets/menu/Bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
         this.load.spritesheet('bontonSuite','assets/menu/Bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
@@ -60,7 +60,7 @@ class LettreDebut extends Phaser.Scene{
         this.load.image('barreFumi2','assets/barre_fumi/Barre_fumi_2.png');
         this.load.image('barreFumi3','assets/barre_fumi/Barre_fumi_3.png');
         this.load.image('barreFumi4','assets/barre_fumi/Barre_fumi_4.png');
-        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');
+        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');*/
              
     }
     create(){
