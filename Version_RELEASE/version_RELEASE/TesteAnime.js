@@ -1,6 +1,5 @@
 
-var musicConfig;
-var execution =false;
+
 
 class TesteAnime extends Phaser.Scene{
     constructor(){
