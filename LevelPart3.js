@@ -534,7 +534,7 @@ class LevelPart3 extends Phaser.Scene{
                 .setScale(1)
         }
 
-        this.physics.add.overlap(player, this.coffre ,recupCoffreVert, null,this);
+        this.physics.add.overlap(player, this.coffre ,recupCoffreMarron, null,this);
 
         /////////////////////////////   
         // Porte ///////////////////

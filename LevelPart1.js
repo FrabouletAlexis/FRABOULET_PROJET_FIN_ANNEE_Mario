@@ -62,7 +62,7 @@ var attrape = false;
 
 var detectionArcher = 640;
 var detectionSoldat = 400;
-var detectionColosse = 200;
+var detectionColosse = 400;
 var detectionChimiste = 400;
 
 var vitesseColosse = 100;
