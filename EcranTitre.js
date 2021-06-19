@@ -10,9 +10,9 @@ class EcranTitre extends Phaser.Scene{
     preload(){
 
         this.load.image('ecranTitre','assets/menu/ecran_titre.png');
-        this.load.spritesheet('boutonJouer','assets/menu/bouton_jouer.png', { frameWidth: 260, frameHeight: 108 });
-        this.load.spritesheet('bontonCommande','assets/menu/bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
-        this.load.spritesheet('bontonSuite','assets/menu/bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
+        this.load.spritesheet('boutonJouer','assets/menu/Bouton_jouer.png', { frameWidth: 260, frameHeight: 108 });
+        this.load.spritesheet('bontonCommande','assets/menu/Bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
+        this.load.spritesheet('bontonSuite','assets/menu/Bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
         this.load.image('panneauCommande','assets/menu/panneau_commande.png');
         
         this.load.image('parallaxe3','assets/parallaxe/parallaxe_3.png');
