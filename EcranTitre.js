@@ -28,7 +28,7 @@ class EcranTitre extends Phaser.Scene{
         this.load.audio('bruit_fiole', 'assets/audio/bruit_fiole.mp3')
 
         this.load.spritesheet('boutonPause','assets/menu/Bouton_pause.png', { frameWidth: 55, frameHeight: 60 });
-        this.load.image('menuPause','assets/menu/Panneau_pause.png');
+        this.load.image('menuPause','assets/menu/panneau_pause.png');
         this.load.spritesheet('flecheDroite','assets/menu/bouton_mobile/Bouton_fleche_droite.png', { frameWidth: 48, frameHeight: 48 });
         this.load.spritesheet('flecheGauche','assets/menu/bouton_mobile/Bouton_fleche_gauche.png', { frameWidth: 48, frameHeight: 48 });
         this.load.spritesheet('flecheHaut','assets/menu/bouton_mobile/Bouton_fleche_haut.png', { frameWidth: 48, frameHeight: 48 });
@@ -44,7 +44,7 @@ class EcranTitre extends Phaser.Scene{
         this.load.image('CoffreMarron','assets/menu/coffre/coffre_marron_menu.png');
         this.load.image('CoffreRouge','assets/menu/coffre/coffre_rouge_menu.png');
 
-        this.load.spritesheet('boutonRetour','assets/menu/Bouton_retour.png', { frameWidth: 208, frameHeight: 65 });
+        this.load.spritesheet('boutonRetour','assets/menu/bouton_retour.png', { frameWidth: 208, frameHeight: 65 });
 
         this.load.spritesheet('vinetta', 'assets/spritesheet/spritesheet_Vinetta.png', { frameWidth: 160, frameHeight: 150 });
         this.load.spritesheet('vinetta_Mort_fiole', 'assets/spritesheet/spritesheet_Vinetta_Mort_fiole.png', { frameWidth: 235, frameHeight: 150 });
