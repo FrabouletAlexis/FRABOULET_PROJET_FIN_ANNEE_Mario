@@ -37,6 +37,7 @@ class EcranTitre extends Phaser.Scene{
         this.load.spritesheet('boutonFumi','assets/menu/bouton_mobile/Bouton_fumi.png', { frameWidth: 48, frameHeight: 48 });
 
         this.load.image('texteChope','assets/tuto/texte_chope.png');
+        this.load.image('texteChopeMobile','assets/tuto/texte_chope_mobile.png');
         this.load.image('texteDebut','assets/menu/texte_debut.png');
 
         this.load.image('CoffreGris','assets/menu/coffre/Coffre_gris.png');
