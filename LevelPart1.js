@@ -138,7 +138,7 @@ class LevelPart1 extends Phaser.Scene{
         this.load.tilemapTiledJSON('mapPart1','assets/tiles/level_Part_1.json');
 
         this.load.audio('audio_fond', 'assets/audio/music_fond.ogg')
-        this.load.audio('bruit_coup', 'assets/audio/Bruit_coup.ogg')
+        //this.load.audio('bruit_coup', 'assets/audio/Bruit_coup.ogg')
     }
     create(){
 
