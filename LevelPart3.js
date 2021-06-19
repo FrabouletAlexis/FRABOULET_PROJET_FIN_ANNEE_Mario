@@ -6,10 +6,11 @@ class LevelPart3 extends Phaser.Scene{
         
     }
     preload(){
-       /* this.load.image('ecranTitre','assets/menu/ecran_titre.png');
-        this.load.spritesheet('boutonJouer','assets/menu/bouton_jouer.png', { frameWidth: 260, frameHeight: 108 });
+        this.load.image('ecranTitre','assets/menu/ecran_titre.png');
+        this.load.spritesheet('boutonJouer','assets/menu/Bouton_Jouer.png', { frameWidth: 260, frameHeight: 108 });
         this.load.spritesheet('bontonCommande','assets/menu/Bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
         this.load.spritesheet('bontonSuite','assets/menu/Bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
+        this.load.spritesheet('bontonChoixMobile','assets/menu/Bouton_choix_mobile.png', { frameWidth: 190, frameHeight: 50 });
         this.load.image('panneauCommande','assets/menu/panneau_commande.png');
         
         this.load.image('parallaxe3','assets/parallaxe/parallaxe_3.png');
@@ -17,12 +18,23 @@ class LevelPart3 extends Phaser.Scene{
         this.load.image('parallaxe1','assets/parallaxe/parallaxe_1.png');
 
         this.load.audio('audio_fond', 'assets/audio/music_fond.ogg')
-        this.load.audio('bruit_coup', 'assets/audio/Bruit_coup.ogg')
+        this.load.audio('bruit_fumi', 'assets/audio/bruit_fumi.mp3')
+        this.load.audio('bruit_attaque', 'assets/audio/bruit_attaque.wav')
+        this.load.audio('bruit_acide', 'assets/audio/bruit_acide.mp3')
+        this.load.audio('bruit_coup_colosse', 'assets/audio/bruit_coup_colosse.wav')
+        this.load.audio('bruit_execution', 'assets/audio/bruit_execution.mp3')
+        this.load.audio('bruit_fiole', 'assets/audio/bruit_fiole.mp3')
 
         this.load.spritesheet('boutonPause','assets/menu/Bouton_pause.png', { frameWidth: 55, frameHeight: 60 });
-        this.load.image('menuPause','assets/menu/Panneau_pause.png');
+        this.load.image('menuPause','assets/menu/panneau_pause.png');
+        this.load.spritesheet('flecheDroite','assets/menu/bouton_mobile/Bouton_fleche_droite.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheGauche','assets/menu/bouton_mobile/Bouton_fleche_gauche.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheHaut','assets/menu/bouton_mobile/Bouton_fleche_haut.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheBas','assets/menu/bouton_mobile/Bouton_fleche_bas.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('boutonFumi','assets/menu/bouton_mobile/Bouton_fumi.png', { frameWidth: 48, frameHeight: 48 });
 
         this.load.image('texteChope','assets/tuto/texte_chope.png');
+        this.load.image('texteChopeMobile','assets/tuto/texte_chope_mobile.png');
         this.load.image('texteDebut','assets/menu/Texte_debut.png');
 
         this.load.image('CoffreGris','assets/menu/coffre/Coffre_gris.png');
@@ -35,10 +47,10 @@ class LevelPart3 extends Phaser.Scene{
 
         this.load.spritesheet('vinetta', 'assets/spritesheet/spritesheet_Vinetta.png', { frameWidth: 160, frameHeight: 150 });
         this.load.spritesheet('vinetta_Mort_fiole', 'assets/spritesheet/spritesheet_Vinetta_Mort_fiole.png', { frameWidth: 235, frameHeight: 150 });
-        this.load.spritesheet('soldat', 'assets/spritesheet/spritesheet_soldat.png', { frameWidth: 90, frameHeight: 160 });
-        this.load.spritesheet('colosse', 'assets/spritesheet/spritesheet_colosse.png', { frameWidth: 120, frameHeight: 160 });
-        this.load.spritesheet('archer', 'assets/spritesheet/spritesheet_tireur.png', { frameWidth: 87, frameHeight: 150 });
-        this.load.spritesheet('chimiste', 'assets/spritesheet/spritesheet_chimiste.png', { frameWidth: 90, frameHeight: 150 });
+        this.load.spritesheet('soldat', 'assets/spritesheet/spritesheet_Soldat.png', { frameWidth: 90, frameHeight: 160 });
+        this.load.spritesheet('colosse', 'assets/spritesheet/spritesheet_Colosse.png', { frameWidth: 120, frameHeight: 160 });
+        this.load.spritesheet('archer', 'assets/spritesheet/spritesheet_Tireur.png', { frameWidth: 87, frameHeight: 150 });
+        this.load.spritesheet('chimiste', 'assets/spritesheet/spritesheet_Chimiste.png', { frameWidth: 90, frameHeight: 150 });
 
         this.load.spritesheet('explosionFumi', 'assets/FX/explosion_fumi.png', { frameWidth: 380, frameHeight: 400 });
         this.load.image('fleche','assets/spritesheet/fleche.png');
@@ -58,7 +70,7 @@ class LevelPart3 extends Phaser.Scene{
         this.load.image('barreFumi2','assets/barre_fumi/Barre_fumi_2.png');
         this.load.image('barreFumi3','assets/barre_fumi/Barre_fumi_3.png');
         this.load.image('barreFumi4','assets/barre_fumi/Barre_fumi_4.png');
-        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');*/
+        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');
         this.load.image('tiles','assets/tiles/Decors.png');
         this.load.tilemapTiledJSON('mapPart3','assets/tiles/level_Part_3.json');
 
@@ -907,7 +919,7 @@ class LevelPart3 extends Phaser.Scene{
      // CONTROLE CLAVIER /////////
     ///////////////////////////// 
     
-        if ((cursors.left.isDown || cursors2.Q.isDown)&& attrape == false)
+        if ((cursors.left.isDown || cursors2.Q.isDown || droite )&& attrape == false)
         {   
             if (gameOver == false){
                 player.setVelocityX(-vitesse_joueur*speed);
@@ -918,7 +930,7 @@ class LevelPart3 extends Phaser.Scene{
             
         }
         
-        else if ((cursors.right.isDown || cursors2.D.isDown)&& attrape == false)
+        else if ((cursors.right.isDown || cursors2.D.isDown ||gauche)&& attrape == false)
         {
 
             if (gameOver == false){
@@ -928,7 +940,7 @@ class LevelPart3 extends Phaser.Scene{
             }
         }
         
-        else if (((cursors.down.isDown || cursors2.S.isDown)&& attrape == false && onGround == false && sautTete == false) && gameOver == false){//direction vers le bas /////////////////////
+        else if (((cursors.down.isDown || cursors2.S.isDown || bas)&& attrape == false && onGround == false && sautTete == false) && gameOver == false){//direction vers le bas /////////////////////
             player.setVelocityY(vitesseAttaque);
             attaque = true;
         }
@@ -941,7 +953,7 @@ class LevelPart3 extends Phaser.Scene{
             player.setVelocityX(0);
         }
                 //saut /////////////////////
-        if (((cursors.up.isDown && onGround || cursors2.Z.isDown && onGround || cursors2.SPACE.isDown && onGround) && attrape == false) && gameOver == false )
+        if (((cursors.up.isDown || cursors2.Z.isDown || cursors2.SPACE.isDown || haut) && onGround && attrape == false) && gameOver == false )
         {
             player.setVelocityY(-vitesse_saut);
 
@@ -972,7 +984,7 @@ class LevelPart3 extends Phaser.Scene{
         ////// DASH FUMIGENE /////////////////
         /////////////////////////////////////
 
-        if ((cursors.right.isDown || cursors.left.isDown || cursors2.D.isDown || cursors2.Q.isDown) && libre && verifDash && nbFumigene > 0 && !attrape && !gameOver && !invincible){
+        if ((cursors.right.isDown || cursors.left.isDown || cursors2.D.isDown || cursors2.Q.isDown || droite || gauche) && (libre || utiliseFumi) && verifDash && nbFumigene > 0 && !attrape && !gameOver && !invincible){
             this.bruitfumi.play()
             nbFumigene --;
             verifDash = false;
@@ -994,14 +1006,14 @@ class LevelPart3 extends Phaser.Scene{
             setTimeout(function(){verifDash = true}, 800);
 
         }
-         if (animeFumerFX){
+        if (animeFumerFX){
             //fumerFX = this.add.sprite(player.x,player.y-125, 'explosionFumi');
             setTimeout(function(){fumerFX.anims.play('exploseFumi',true)}, 0);
             //setTimeout(function(){fumerFX.destroy();}, 1000);
             setTimeout(function(){animeFumerFX = false}, 1000);
             if (!animeFumerFX){
                 fumerFX.destroy();
-             }
+            }
         }
 
       /////////////////////////////   
