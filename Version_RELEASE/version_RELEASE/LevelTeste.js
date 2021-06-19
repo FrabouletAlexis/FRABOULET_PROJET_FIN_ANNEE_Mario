@@ -1,4 +1,3 @@
-var nbFumigene = 5;
 
 class LevelTeste extends Phaser.Scene{
 
