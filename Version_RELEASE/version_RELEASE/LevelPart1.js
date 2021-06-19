@@ -3,8 +3,8 @@ var cursors2;
 var paddle;
 var padConnected;
 var onGround ;
+var musicConfig;
 
-var onGround;
 
 var platforms;
 var fond;
@@ -51,6 +51,7 @@ var utiliseFumi = false;
 ///////////////
 /// enemie /// 
 /////////////
+var execution =false;
 
 var enemieObjects;
 var archerObjects;
