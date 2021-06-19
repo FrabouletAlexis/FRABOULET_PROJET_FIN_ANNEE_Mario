@@ -55,23 +55,23 @@ class EcranTitre extends Phaser.Scene{
 
         this.load.spritesheet('explosionFumi', 'assets/FX/explosion_fumi.png', { frameWidth: 380, frameHeight: 400 });
         this.load.image('fleche','assets/spritesheet/fleche.png');
-        this.load.image('bombe','assets/item/bombe_Loot.png');
-        this.load.image('fiole','assets/item/fiole.png');
+        this.load.image('bombe','assets/item/Bombe_Loot.png');
+        this.load.image('fiole','assets/item/Fiole.png');
         this.load.image('clef','assets/item/clef.png');
 
-        this.load.image('tresorVert','assets/item/coffre_Vert.png');
-        this.load.image('tresorBleu','assets/item/coffre_Bleu.png');
-        this.load.image('tresorMarron','assets/item/coffre_Marron.png');
-        this.load.image('tresorRouge','assets/item/coffre_Rouge.png');
+        this.load.image('tresorVert','assets/item/Coffre_Vert.png');
+        this.load.image('tresorBleu','assets/item/Coffre_Bleu.png');
+        this.load.image('tresorMarron','assets/item/Coffre_Marron.png');
+        this.load.image('tresorRouge','assets/item/Coffre_Rouge.png');
 
         this.load.image('porte','assets/item/Porte_deverouille.png');
         
-        this.load.image('barreFumi0','assets/barre_fumi/barre_fumi_0.png');
-        this.load.image('barreFumi1','assets/barre_fumi/barre_fumi_1.png');
-        this.load.image('barreFumi2','assets/barre_fumi/barre_fumi_2.png');
-        this.load.image('barreFumi3','assets/barre_fumi/barre_fumi_3.png');
-        this.load.image('barreFumi4','assets/barre_fumi/barre_fumi_4.png');
-        this.load.image('barreFumi5','assets/barre_fumi/barre_fumi_5.png');
+        this.load.image('barreFumi0','assets/barre_fumi/Barre_fumi_0.png');
+        this.load.image('barreFumi1','assets/barre_fumi/Barre_fumi_1.png');
+        this.load.image('barreFumi2','assets/barre_fumi/Barre_fumi_2.png');
+        this.load.image('barreFumi3','assets/barre_fumi/Barre_fumi_3.png');
+        this.load.image('barreFumi4','assets/barre_fumi/Barre_fumi_4.png');
+        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');
              
     }
     create(){
