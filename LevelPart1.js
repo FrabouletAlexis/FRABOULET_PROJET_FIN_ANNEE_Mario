@@ -980,7 +980,7 @@ class LevelPart1 extends Phaser.Scene{
      // CONTROLE CLAVIER /////////
     ///////////////////////////// 
     
-        if ((cursors.left.isDown || cursors2.Q.isDown)&& attrape == false)
+        if ((cursors.left.isDown || cursors2.Q.isDown || droite )&& attrape == false)
         {   
             if (gameOver == false){
                 player.setVelocityX(-vitesse_joueur*speed);
@@ -991,7 +991,7 @@ class LevelPart1 extends Phaser.Scene{
             
         }
         
-        else if ((cursors.right.isDown || cursors2.D.isDown)&& attrape == false)
+        else if ((cursors.right.isDown || cursors2.D.isDown ||gauche)&& attrape == false)
         {
 
             if (gameOver == false){
@@ -1001,7 +1001,7 @@ class LevelPart1 extends Phaser.Scene{
             }
         }
         
-        else if (((cursors.down.isDown || cursors2.S.isDown)&& attrape == false && onGround == false && sautTete == false) && gameOver == false){//direction vers le bas /////////////////////
+        else if (((cursors.down.isDown || cursors2.S.isDown || bas)&& attrape == false && onGround == false && sautTete == false) && gameOver == false){//direction vers le bas /////////////////////
             player.setVelocityY(vitesseAttaque);
             attaque = true;
         }
@@ -1014,7 +1014,7 @@ class LevelPart1 extends Phaser.Scene{
             player.setVelocityX(0);
         }
                 //saut /////////////////////
-        if (((cursors.up.isDown && onGround || cursors2.Z.isDown && onGround || cursors2.SPACE.isDown && onGround) && attrape == false) && gameOver == false )
+        if (((cursors.up.isDown || cursors2.Z.isDown || cursors2.SPACE.isDown || haut) && onGround && attrape == false) && gameOver == false )
         {
             player.setVelocityY(-vitesse_saut);
 
