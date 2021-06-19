@@ -27,16 +27,16 @@ class EcranTitre extends Phaser.Scene{
         this.load.audio('bruit_execution', 'assets/audio/bruit_execution.mp3')
         this.load.audio('bruit_fiole', 'assets/audio/bruit_fiole.mp3')
 
-        this.load.spritesheet('boutonPause','assets/menu/bouton_pause.png', { frameWidth: 55, frameHeight: 60 });
+        this.load.spritesheet('boutonPause','assets/menu/Bouton_pause.png', { frameWidth: 55, frameHeight: 60 });
         this.load.image('menuPause','assets/menu/Panneau_pause.png');
-        this.load.spritesheet('flecheDroite','assets/menu/bouton_mobile/bouton_fleche_droite.png', { frameWidth: 48, frameHeight: 48 });
-        this.load.spritesheet('flecheGauche','assets/menu/bouton_mobile/bouton_fleche_gauche.png', { frameWidth: 48, frameHeight: 48 });
-        this.load.spritesheet('flecheHaut','assets/menu/bouton_mobile/bouton_fleche_haut.png', { frameWidth: 48, frameHeight: 48 });
-        this.load.spritesheet('flecheBas','assets/menu/bouton_mobile/bouton_fleche_bas.png', { frameWidth: 48, frameHeight: 48 });
-        this.load.spritesheet('boutonFumi','assets/menu/bouton_mobile/bouton_fumi.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheDroite','assets/menu/bouton_mobile/Bouton_fleche_droite.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheGauche','assets/menu/bouton_mobile/Bouton_fleche_gauche.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheHaut','assets/menu/bouton_mobile/Bouton_fleche_haut.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheBas','assets/menu/bouton_mobile/Bouton_fleche_bas.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('boutonFumi','assets/menu/bouton_mobile/Bouton_fumi.png', { frameWidth: 48, frameHeight: 48 });
 
         this.load.image('texteChope','assets/tuto/texte_chope.png');
-        this.load.image('texteDebut','assets/menu/texte_debut.png');
+        this.load.image('texteDebut','assets/menu/Texte_debut.png');
 
         this.load.image('CoffreGris','assets/menu/coffre/coffre_gris.png');
         this.load.image('CoffreVert','assets/menu/coffre/coffre_vert_menu.png');
