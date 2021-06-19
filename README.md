@@ -8,3 +8,5 @@ Vous trouverez aussi un dossier documentation, qui contient le game Concept (GC)
 Les dossiers Version_ALPHA Version_BETA et Version_REALISE contiennent les différentes étapes d'avancement du jeu.
 
 Le fichier Executable_du_jeu.7z contient un executable windows du jeu.
+
+La version jouable sur navigateur est accessible via ce lien : https://frabouletalexis.github.io/FRABOULET_PROJET_FIN_ANNEE_Mario/
