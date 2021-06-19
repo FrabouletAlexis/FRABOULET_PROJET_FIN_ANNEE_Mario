@@ -13,7 +13,7 @@ class LevelPart4 extends Phaser.Scene{
         this.load.tilemapTiledJSON('mapPart4','assets/tiles/level_Part_4.json');
 
         this.load.audio('audio_fond', 'assets/audio/music_fond.ogg')
-        this.load.audio('bruit_coup', 'assets/audio/Bruit_coup.ogg')
+        //this.load.audio('bruit_coup', 'assets/audio/Bruit_coup.ogg')
     }
     create(){
         this.cameras.main.fadeIn(1000);
