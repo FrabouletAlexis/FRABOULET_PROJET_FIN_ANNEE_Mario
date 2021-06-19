@@ -60,7 +60,7 @@ var colosseObjects;
 
 var attrape = false;
 
-var detectionArcher = 640;
+var detectionArcher = 800;
 var detectionSoldat = 400;
 var detectionColosse = 400;
 var detectionChimiste = 400;
