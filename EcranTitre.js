@@ -48,10 +48,10 @@ class EcranTitre extends Phaser.Scene{
 
         this.load.spritesheet('vinetta', 'assets/spritesheet/spritesheet_Vinetta.png', { frameWidth: 160, frameHeight: 150 });
         this.load.spritesheet('vinetta_Mort_fiole', 'assets/spritesheet/spritesheet_Vinetta_Mort_fiole.png', { frameWidth: 235, frameHeight: 150 });
-        this.load.spritesheet('soldat', 'assets/spritesheet/spritesheet_soldat.png', { frameWidth: 90, frameHeight: 160 });
-        this.load.spritesheet('colosse', 'assets/spritesheet/spritesheet_colosse.png', { frameWidth: 120, frameHeight: 160 });
-        this.load.spritesheet('archer', 'assets/spritesheet/spritesheet_tireur.png', { frameWidth: 87, frameHeight: 150 });
-        this.load.spritesheet('chimiste', 'assets/spritesheet/spritesheet_chimiste.png', { frameWidth: 90, frameHeight: 150 });
+        this.load.spritesheet('soldat', 'assets/spritesheet/spritesheet_Soldat.png', { frameWidth: 90, frameHeight: 160 });
+        this.load.spritesheet('colosse', 'assets/spritesheet/spritesheet_Colosse.png', { frameWidth: 120, frameHeight: 160 });
+        this.load.spritesheet('archer', 'assets/spritesheet/spritesheet_Tireur.png', { frameWidth: 87, frameHeight: 150 });
+        this.load.spritesheet('chimiste', 'assets/spritesheet/spritesheet_Chimiste.png', { frameWidth: 90, frameHeight: 150 });
 
         this.load.spritesheet('explosionFumi', 'assets/FX/explosion_fumi.png', { frameWidth: 380, frameHeight: 400 });
         this.load.image('fleche','assets/spritesheet/fleche.png');
