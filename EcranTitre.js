@@ -13,6 +13,7 @@ class EcranTitre extends Phaser.Scene{
         this.load.spritesheet('boutonJouer','assets/menu/Bouton_Jouer.png', { frameWidth: 260, frameHeight: 108 });
         this.load.spritesheet('bontonCommande','assets/menu/Bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
         this.load.spritesheet('bontonSuite','assets/menu/Bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
+        this.load.spritesheet('bontonChoixMobile','assets/menu/Bouton_choix_mobile.png', { frameWidth: 190, frameHeight: 50 });
         this.load.image('panneauCommande','assets/menu/panneau_commande.png');
         
         this.load.image('parallaxe3','assets/parallaxe/parallaxe_3.png');
@@ -79,7 +80,11 @@ class EcranTitre extends Phaser.Scene{
         this.add.image(896/2, 448/2, 'ecranTitre')
             
         buttonJouer = this.add.sprite(625, 285, 'boutonJouer').setScrollFactor(0).setInteractive({ cursor: 'pointer' });
+        buttonChoixMobile = this.add.sprite(625, 400, 'bontonChoixMobile').setScrollFactor(0).setInteractive({ cursor: 'pointer' });
 
+        
+    
+        /////// Button Jouer ///////////////////
         this.anims.create({
             key: 'JouerSurbrillance',
             frames: [ { key: 'boutonJouer', frame: 1 } ],
@@ -91,9 +96,6 @@ class EcranTitre extends Phaser.Scene{
             frames: [ { key: 'boutonJouer', frame: 0 } ],
             frameRate: 20
         })
-    
-        /////// Button Jouer ///////////////////
-    
         buttonJouer.on('pointerover', function (event) {
     
             buttonJouer.anims.play('JouerSurbrillance',true);
@@ -115,7 +117,62 @@ class EcranTitre extends Phaser.Scene{
         })
 
         this.cameras.main.fadeIn(1000);
+        
+        /////// Button choix mobile ///////////////////
+        this.anims.create({
+            key: 'nonChoix_neutre',
+            frames: [ { key: 'bontonChoixMobile', frame: 0 } ],
+            frameRate: 20
+        })
+
+        this.anims.create({
+            key: 'nonChoix_active',
+            frames: [ { key: 'bontonChoixMobile', frame: 1 } ],
+            frameRate: 20
+        })
+
+        this.anims.create({
+            key: 'Choix_neutre',
+            frames: [ { key: 'bontonChoixMobile', frame: 2 } ],
+            frameRate: 20
+        })
+
+        this.anims.create({
+            key: 'Choix_active',
+            frames: [ { key: 'bontonChoixMobile', frame: 3 } ],
+            frameRate: 20
+        })
     
+        buttonChoixMobile.on('pointerover', function (event) {
+            if (commandeMobile){
+                buttonChoixMobile.anims.play('Choix_active',true);
+            }
+            else {
+                buttonChoixMobile.anims.play('nonChoix_active',true);
+            }
+            
+    
+            });
+           buttonChoixMobile.on('pointerout', function (event) {
+    
+            if (commandeMobile){
+                buttonChoixMobile.anims.play('Choix_neutre',true);
+            }
+            else {
+                buttonChoixMobile.anims.play('nonChoix_neutre',true);
+            }
+    
+        });
+        buttonChoixMobile.on('pointerdown', function(){
+    
+            if (commandeMobile){
+                commandeMobile = false;
+            }
+            else {
+                commandeMobile = true;
+            }
+
+        }, this)
            
         
 

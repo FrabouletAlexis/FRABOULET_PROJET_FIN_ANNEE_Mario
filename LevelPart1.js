@@ -27,6 +27,8 @@ var dureInvincible = 2000;
 var buttonJouer;
 var buttonRetour;
 var buttonSuite;
+var buttonChoixMobile;
+var commandeMobile = false;
 
 var buttonPause;
 var menuPause;
