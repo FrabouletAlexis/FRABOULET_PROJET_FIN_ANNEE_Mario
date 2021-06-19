@@ -6,7 +6,7 @@ class LevelPart3 extends Phaser.Scene{
         
     }
     preload(){
-        this.load.image('ecranTitre','assets/menu/ecran_titre.png');
+       /* this.load.image('ecranTitre','assets/menu/ecran_titre.png');
         this.load.spritesheet('boutonJouer','assets/menu/bouton_jouer.png', { frameWidth: 260, frameHeight: 108 });
         this.load.spritesheet('bontonCommande','assets/menu/Bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
         this.load.spritesheet('bontonSuite','assets/menu/Bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
@@ -58,7 +58,7 @@ class LevelPart3 extends Phaser.Scene{
         this.load.image('barreFumi2','assets/barre_fumi/Barre_fumi_2.png');
         this.load.image('barreFumi3','assets/barre_fumi/Barre_fumi_3.png');
         this.load.image('barreFumi4','assets/barre_fumi/Barre_fumi_4.png');
-        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');
+        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');*/
         this.load.image('tiles','assets/tiles/Decors.png');
         this.load.tilemapTiledJSON('mapPart3','assets/tiles/level_Part_3.json');
 
@@ -68,7 +68,12 @@ class LevelPart3 extends Phaser.Scene{
     create(){
         this.cameras.main.fadeIn(1000);
         
-        this.bruitCoup = this.sound.add('bruit_coup')
+        this.bruitfumi = this.sound.add('bruit_fumi')
+        this.bruitAttaque = this.sound.add('bruit_attaque')
+        this.bruitAcide = this.sound.add('bruit_acide')
+        this.bruitCoupColosse = this.sound.add('bruit_coup_colosse')
+        this.bruitExecution = this.sound.add('bruit_execution')
+        this.bruitFiole = this.sound.add('bruit_fiole')
 
         this.add.image(4128/2, 2688/2, 'parallaxe3').setScrollFactor(0.5);
         this.add.image(4128/2, 2688/2, 'parallaxe2').setScrollFactor(0.6);
@@ -82,7 +87,7 @@ class LevelPart3 extends Phaser.Scene{
         secret = map.createLayer('Secret',tileset,0,0).setDepth(4);
         fond = map.createLayer('Fond',tileset,0,0)
         zoneChargement = map.createLayer('Chargement',tileset,0,0)
-        marque = map.createLayer('Marque',tileset,0,0)
+        marque = map.createLayer('Marque',tileset,0,0).setDepth(1.5);
 
         platforms.setCollisionByExclusion(-1,true)
         zoneChargement.setCollisionByExclusion(-1,true)
@@ -186,6 +191,13 @@ class LevelPart3 extends Phaser.Scene{
             key: 'mortSoldat',
             frames: this.anims.generateFrameNumbers('vinetta', { start: 101, end: 111 }),
             frameRate: 20,
+            repeat: 0,
+        });
+
+        this.anims.create({
+            key: 'attaque',
+            frames: this.anims.generateFrameNumbers('vinetta', { start: 112, end: 116 }),
+            frameRate: 15,
             repeat: 0,
         });
 
@@ -772,7 +784,13 @@ class LevelPart3 extends Phaser.Scene{
             player.anims.play("saut", true);
         }
         else if (player.body.velocity.y > 0 && !gameOver){
-            player.anims.play("chute", true);
+            if (attaque){
+                player.anims.play("attaque",true);
+            }
+            else {
+                player.anims.play("chute", true);
+            }
+            
         }
 
         if (player.body.velocity.x === 0 && onGround && !gameOver){
@@ -788,7 +806,7 @@ class LevelPart3 extends Phaser.Scene{
         /////////////////////////////////////
 
         if ((cursors.right.isDown || cursors.left.isDown || cursors2.D.isDown || cursors2.Q.isDown) && libre && verifDash && nbFumigene > 0 && !attrape && !gameOver && !invincible){
-            this.bruitCoup.play()
+            this.bruitfumi.play()
             nbFumigene --;
             verifDash = false;
             

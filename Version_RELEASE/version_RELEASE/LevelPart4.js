@@ -18,7 +18,12 @@ class LevelPart4 extends Phaser.Scene{
     create(){
         this.cameras.main.fadeIn(1000);
         
-        this.bruitCoup = this.sound.add('bruit_coup')
+        this.bruitfumi = this.sound.add('bruit_fumi')
+        this.bruitAttaque = this.sound.add('bruit_attaque')
+        this.bruitAcide = this.sound.add('bruit_acide')
+        this.bruitCoupColosse = this.sound.add('bruit_coup_colosse')
+        this.bruitExecution = this.sound.add('bruit_execution')
+        this.bruitFiole = this.sound.add('bruit_fiole')
 
         this.add.image(4128/2, 2688/2, 'parallaxe3').setScrollFactor(0.5);
         this.add.image(4128/2, 2688/2, 'parallaxe2').setScrollFactor(0.6);
@@ -32,7 +37,7 @@ class LevelPart4 extends Phaser.Scene{
         secret = map.createLayer('Secret',tileset,0,0).setDepth(4);
         fond = map.createLayer('Fond',tileset,0,0)
         zoneChargement = map.createLayer('Chargement',tileset,0,0)
-        marque = map.createLayer('Marque',tileset,0,0)
+        marque = map.createLayer('Marque',tileset,0,0).setDepth(1.5);
 
         platforms.setCollisionByExclusion(-1,true)
         zoneChargement.setCollisionByExclusion(-1,true)
@@ -138,6 +143,13 @@ class LevelPart4 extends Phaser.Scene{
         key: 'mortSoldat',
         frames: this.anims.generateFrameNumbers('vinetta', { start: 101, end: 111 }),
         frameRate: 20,
+        repeat: 0,
+    });
+
+    this.anims.create({
+        key: 'attaque',
+        frames: this.anims.generateFrameNumbers('vinetta', { start: 112, end: 116 }),
+        frameRate: 15,
         repeat: 0,
     });
 
@@ -713,7 +725,13 @@ class LevelPart4 extends Phaser.Scene{
             player.anims.play("saut", true);
         }
         else if (player.body.velocity.y > 0 && !gameOver){
-            player.anims.play("chute", true);
+            if (attaque){
+                player.anims.play("attaque",true);
+            }
+            else {
+                player.anims.play("chute", true);
+            }
+            
         }
 
         if (player.body.velocity.x === 0 && onGround && !gameOver){
@@ -729,7 +747,7 @@ class LevelPart4 extends Phaser.Scene{
         /////////////////////////////////////
 
         if ((cursors.right.isDown || cursors.left.isDown || cursors2.D.isDown || cursors2.Q.isDown) && libre && verifDash && nbFumigene > 0 && !attrape && !gameOver && !invincible){
-            this.bruitCoup.play()
+            this.bruitfumi.play()
             nbFumigene --;
             verifDash = false;
             

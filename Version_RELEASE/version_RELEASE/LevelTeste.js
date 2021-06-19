@@ -127,6 +127,13 @@ class LevelTeste extends Phaser.Scene{
         });
 
         this.anims.create({
+            key: 'attaque',
+            frames: this.anims.generateFrameNumbers('vinetta', { start: 112, end: 116 }),
+            frameRate: 15,
+            repeat: 0,
+        });
+
+        this.anims.create({
             key: 'mortFlecheSol',
             frames: this.anims.generateFrameNumbers('vinetta', { start: 68, end: 76 }),
             frameRate: 20,
