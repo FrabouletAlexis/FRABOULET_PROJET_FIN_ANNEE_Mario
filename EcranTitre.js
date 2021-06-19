@@ -10,7 +10,7 @@ class EcranTitre extends Phaser.Scene{
     preload(){
 
         this.load.image('ecranTitre','assets/menu/ecran_titre.png');
-        this.load.spritesheet('boutonJouer','assets/menu/Bouton_jouer.png', { frameWidth: 260, frameHeight: 108 });
+        this.load.spritesheet('boutonJouer','assets/menu/Bouton_Jouer.png', { frameWidth: 260, frameHeight: 108 });
         this.load.spritesheet('bontonCommande','assets/menu/Bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
         this.load.spritesheet('bontonSuite','assets/menu/Bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
         this.load.image('panneauCommande','assets/menu/panneau_commande.png');
@@ -38,13 +38,13 @@ class EcranTitre extends Phaser.Scene{
         this.load.image('texteChope','assets/tuto/texte_chope.png');
         this.load.image('texteDebut','assets/menu/Texte_debut.png');
 
-        this.load.image('CoffreGris','assets/menu/coffre/coffre_gris.png');
+        this.load.image('CoffreGris','assets/menu/coffre/Coffre_gris.png');
         this.load.image('CoffreVert','assets/menu/coffre/coffre_vert_menu.png');
         this.load.image('CoffreBleu','assets/menu/coffre/coffre_bleu_menu.png');
         this.load.image('CoffreMarron','assets/menu/coffre/coffre_marron_menu.png');
         this.load.image('CoffreRouge','assets/menu/coffre/coffre_rouge_menu.png');
 
-        this.load.spritesheet('boutonRetour','assets/menu/bouton_retour.png', { frameWidth: 208, frameHeight: 65 });
+        this.load.spritesheet('boutonRetour','assets/menu/Bouton_retour.png', { frameWidth: 208, frameHeight: 65 });
 
         this.load.spritesheet('vinetta', 'assets/spritesheet/spritesheet_Vinetta.png', { frameWidth: 160, frameHeight: 150 });
         this.load.spritesheet('vinetta_Mort_fiole', 'assets/spritesheet/spritesheet_Vinetta_Mort_fiole.png', { frameWidth: 235, frameHeight: 150 });
