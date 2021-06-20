@@ -526,7 +526,7 @@ class LevelPart2 extends Phaser.Scene{
         
         for (const clef of  clefObjects) {
 
-            this.clef.create(clef.x, clef.y, 'clef')
+            this.clef.create(clef.x, clef.y, 'clefBleu')
                 .setOrigin(0.5,0.5)
                 .setDepth(1)
                 .setScale(1)
@@ -564,7 +564,7 @@ class LevelPart2 extends Phaser.Scene{
         
         for (const porte of  porteObjects) {
 
-            this.porte.create(porte.x, porte.y, 'porte')
+            this.porte.create(porte.x, porte.y, 'porteBleu')
                 .setOrigin(0.5,0.5)
                 .setDepth(1)
                 .setScale(1)

@@ -72,14 +72,18 @@ class EcranTitre extends Phaser.Scene{
         this.load.image('fleche','assets/spritesheet/fleche.png');
         this.load.image('bombe','assets/item/Bombe_Loot.png');
         this.load.image('fiole','assets/item/Fiole.png');
-        this.load.image('clef','assets/item/clef.png');
+        this.load.image('clefVert','assets/item/clef_vert.png');
+        this.load.image('clefBleu','assets/item/clef_bleu.png');
+        this.load.image('clefRouge','assets/item/clef_rouge.png');
 
         this.load.image('tresorVert','assets/item/Coffre_Vert.png');
         this.load.image('tresorBleu','assets/item/Coffre_Bleu.png');
         this.load.image('tresorMarron','assets/item/Coffre_Marron.png');
         this.load.image('tresorRouge','assets/item/Coffre_Rouge.png');
 
-        this.load.image('porte','assets/item/Porte_deverouille.png');
+        this.load.image('porteVert','assets/item/porte_deverouille_vert.png');
+        this.load.image('porteBleu','assets/item/porte_deverouille_bleu.png');
+        this.load.image('porteRouge','assets/item/porte_deverouille_rouge.png');
         
         this.load.image('barreFumi0','assets/barre_fumi/Barre_fumi_0.png');
         this.load.image('barreFumi1','assets/barre_fumi/Barre_fumi_1.png');
