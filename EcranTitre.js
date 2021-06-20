@@ -21,7 +21,9 @@ class EcranTitre extends Phaser.Scene{
         this.load.image('parallaxe1','assets/parallaxe/parallaxe_1.png');
         this.load.image('fond','assets/parallaxe/Fond.png');
 
-        this.load.audio('audio_fond', 'assets/audio/music_fond.ogg')
+        this.load.audio('audio_fond_menu', 'assets/audio/music_fond_menu.ogg')
+        this.load.audio('audio_fond_niveau', 'assets/audio/music_fond_niveau.ogg')
+
         this.load.audio('bruit_fumi', 'assets/audio/bruit_attaque.wav')
         //this.load.audio('bruit_fumi', 'assets/audio/bruit_fumi.mp3')
         this.load.audio('bruit_attaque', 'assets/audio/bruit_attaque.wav')
@@ -94,6 +96,8 @@ class EcranTitre extends Phaser.Scene{
              
     }
     create(){
+
+        
 
         this.add.image(896/2, 448/2, 'ecranTitre')
             

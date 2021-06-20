@@ -5,6 +5,7 @@ var padConnected;
 var onGround ;
 var musicConfig;
 
+var musicFondMenu;
 
 var platforms;
 var fond;
@@ -215,6 +216,20 @@ class LevelPart1 extends Phaser.Scene{
         //this.load.audio('bruit_coup', 'assets/audio/Bruit_coup.ogg')
     }
     create(){
+
+        this.musicFondMenu = this.sound.add('audio_fond_niveau')
+        
+        var musicConfig = {
+            mute : false,
+            volume : 1,
+            rate : 1,
+            deturne : 0,
+            seek : 0,
+            loop : true,
+            delay : 0,
+
+        }
+        this.musicFondMenu.play(musicConfig)
 
         this.cameras.main.fadeIn(1000);
         
@@ -1755,7 +1770,7 @@ class LevelPart1 extends Phaser.Scene{
 
             if ( (cursors2.E.isDown || utiliseFumi) && nbFumigene >0 && compteur > 0){
                 this.bruitfumi.play()
-                fumerFX = this.add.sprite(player.x,player.y, 'fumi').setDepth(2);
+                fumerFX = this.add.sprite(player.x,player.y-125, 'explosionFumi').setDepth(2);
                 animeFumerFX = true;
                 
                 nbFumigene --;

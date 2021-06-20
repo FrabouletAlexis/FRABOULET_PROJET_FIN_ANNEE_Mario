@@ -16,6 +16,20 @@ class EcranFin extends Phaser.Scene{
     
     }
     create(){
+        /*this.musicFond = this.sound.add('audio_fond_menu')
+        
+        var musicConfig = {
+            mute : false,
+            volume : 1,
+            rate : 1,
+            deturne : 0,
+            seek : 0,
+            loop : false,
+            delay : 0,
+
+        }
+        this.musicFond.play(musicConfig)*/
+
         this.add.image(896/2, 448/2, 'ecranFin')
         this.add.image(896/2, 448/2, 'coffreGrisEcranFin')
         if (coffreVert){
