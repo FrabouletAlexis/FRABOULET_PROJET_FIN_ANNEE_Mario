@@ -50,6 +50,7 @@ class EcranTitre extends Phaser.Scene{
         
         
         this.load.image('texteDebut','assets/menu/Texte_debut.png');
+        this.load.image('texteGameOver','assets/menu/GameOver.png');
 
         this.load.image('CoffreGris','assets/menu/coffre/Coffre_gris.png');
         this.load.image('CoffreVert','assets/menu/coffre/coffre_vert_menu.png');

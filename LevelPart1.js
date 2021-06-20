@@ -229,7 +229,7 @@ class LevelPart1 extends Phaser.Scene{
         this.add.image(4128/2, 2688/2, 'parallaxe1').setScrollFactor(0.9);
 
         if (commandeMobile){
-            this.add.image(150, 2260, 'tutoDeplacementMobile').setScrollFactor(1).setDepth(3);
+            this.add.image(150, 2260, 'tutoDeplacement').setScrollFactor(1).setDepth(3);
             this.add.image(450, 2000, 'tutoSautMobile').setScrollFactor(1).setDepth(3);
             this.add.image(620, 1400, 'tutoAttaqueMobile').setScrollFactor(1).setDepth(3);
             this.add.image(420, 1140, 'tutoDashMobile').setScrollFactor(1).setDepth(3);
@@ -1041,7 +1041,9 @@ class LevelPart1 extends Phaser.Scene{
 
         if (gameOver){
             player.setVelocityX(0);
-            gameOvertext = this.add.text(896/2, 448/2, 'Game over', { fontSize : '32px', fill: '#48E14E' }).setScrollFactor(0).setDepth(1);
+
+           gameOvertext = this.add.image(896/2, 448/2, 'texteGameOver').setScrollFactor(0).setDepth(11);
+            
             
             this.input.on('pointerdown', function (pointer) {
                 restart = true;
