@@ -100,7 +100,19 @@ class EcranTitre extends Phaser.Scene{
     }
     create(){
 
+        this.musicFondMenu = this.sound.add('audio_fond_niveau')
         
+        var musicConfig = {
+            mute : false,
+            volume : 1,
+            rate : 1,
+            deturne : 0,
+            seek : 0,
+            loop : true,
+            delay : 0,
+
+        }
+        this.musicFondMenu.play(musicConfig)
 
         this.add.image(896/2, 448/2, 'ecranTitre')
             
