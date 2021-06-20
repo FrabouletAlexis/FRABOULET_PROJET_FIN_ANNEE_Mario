@@ -798,11 +798,9 @@ class LevelPart4 extends Phaser.Scene{
             }, this)
             buttonFumi.on('pointerdown', function(){
                 utiliseFumi = true;
-                console.log('fumi' + utiliseFumi)
             }, this)
             buttonFumi.on('pointerup', function(){
                 utiliseFumi = false;
-                console.log('fumi' + utiliseFumi)
             }, this)
             
         }
@@ -950,8 +948,6 @@ class LevelPart4 extends Phaser.Scene{
         
         else if ((cursors.right.isDown || cursors2.D.isDown ||gauche)&& attrape == false)
         {
-            console.log('playerX' + player.x)
-            console.log('playerY' + player.y)
             if (gameOver == false){
                 player.setVelocityX(vitesse_joueur*speed);
                 player.anims.play("course", true);
@@ -1011,11 +1007,10 @@ class LevelPart4 extends Phaser.Scene{
             speed = 2;
             invincible = true;
         
-            setTimeout(function(){invincible = false; console.log('invicilble'+ invincible);}, dureInvincible);
+            setTimeout(function(){invincible = false;}, dureInvincible);
 
             
             //invincible = false;
-            //console.log('invicilble'+ invincible)
             fumerFX = this.add.sprite(player.x,player.y-125, 'explosionFumi').setDepth(2);
             
             setTimeout(function(){fumerFX.anims.play('exploseFumi',true)}, 0);
@@ -1055,7 +1050,6 @@ class LevelPart4 extends Phaser.Scene{
                 fleche.body.allowGravity = false;
                 fleche.setFlipX(false);
                 archer.tir = 1;
-                //console.log('nbFleche =1');
             
                 fleche.setVelocityX( -vitesseFleche);
                 archer.anims.play('TireurTir',true);
@@ -1073,7 +1067,6 @@ class LevelPart4 extends Phaser.Scene{
                 fleche.body.allowGravity = false;
                 fleche.setFlipX(true);
                 archer.tir = 1;
-                //console.log('nbFleche =1');
         
                 fleche.setVelocityX( vitesseFleche);
                 archer.anims.play('TireurTir',true);
@@ -1240,7 +1233,6 @@ class LevelPart4 extends Phaser.Scene{
                     execution = true
                     
                     if (onGround){
-                        console.log('scapoué')
                         colosse.setFlipX(false);
                         colosse.setVelocityX(-100)
                     }

@@ -937,11 +937,11 @@ class LevelPart1 extends Phaser.Scene{
             }, this)
             buttonFumi.on('pointerdown', function(){
                 utiliseFumi = true;
-                console.log('fumi' + utiliseFumi)
+
             }, this)
             buttonFumi.on('pointerup', function(){
                 utiliseFumi = false;
-                console.log('fumi' + utiliseFumi)
+
             }, this)
             
         }
@@ -1152,11 +1152,10 @@ class LevelPart1 extends Phaser.Scene{
             speed = 2;
             invincible = true;
         
-            setTimeout(function(){invincible = false; console.log('invicilble'+ invincible);}, dureInvincible);
+            setTimeout(function(){invincible = false;}, dureInvincible);
 
             
             //invincible = false;
-            //console.log('invicilble'+ invincible)
             fumerFX = this.add.sprite(player.x,player.y-125, 'explosionFumi').setDepth(2);
             
             setTimeout(function(){fumerFX.anims.play('exploseFumi',true)}, 0);
@@ -1196,7 +1195,6 @@ class LevelPart1 extends Phaser.Scene{
                 fleche.body.allowGravity = false;
                 fleche.setFlipX(false);
                 archer.tir = 1;
-                //console.log('nbFleche =1');
             
                 fleche.setVelocityX( -vitesseFleche);
                 archer.anims.play('TireurTir',true);
@@ -1214,7 +1212,6 @@ class LevelPart1 extends Phaser.Scene{
                 fleche.body.allowGravity = false;
                 fleche.setFlipX(true);
                 archer.tir = 1;
-                //console.log('nbFleche =1');
         
                 fleche.setVelocityX( vitesseFleche);
                 archer.anims.play('TireurTir',true);
@@ -1381,7 +1378,6 @@ class LevelPart1 extends Phaser.Scene{
                     execution = true
                     
                     if (onGround){
-                        console.log('scapoué')
                         colosse.setFlipX(false);
                         colosse.setVelocityX(-100)
                     }
@@ -1672,7 +1668,7 @@ class LevelPart1 extends Phaser.Scene{
 
                 invincible = true;
         
-                setTimeout(function(){invincible = false; console.log('invicilble'+ invincible);}, dureInvincible);
+                setTimeout(function(){invincible = false;}, dureInvincible);
 
                 enemie.stun = true;
                 enemie.anims.play('soldatStunAtkBoucle', true);
@@ -1719,7 +1715,7 @@ class LevelPart1 extends Phaser.Scene{
                 compteur = compteurMax;
                 invincible = true;
         
-                setTimeout(function(){invincible = false; console.log('invicilble'+ invincible);}, dureInvincible);
+                setTimeout(function(){invincible = false;}, dureInvincible);
 
                 colosse.stun = true;
                 setTimeout(function(){colosse.stun = false}, dureStun);
@@ -1767,7 +1763,7 @@ class LevelPart1 extends Phaser.Scene{
                 compteur = compteurMax;
                 invincible = true;
         
-                setTimeout(function(){invincible = false; console.log('invicilble'+ invincible);}, dureInvincible);
+                setTimeout(function(){invincible = false;}, dureInvincible);
 
                 archer.stun = true;
                 archer.anims.play('TireurStun',true);
