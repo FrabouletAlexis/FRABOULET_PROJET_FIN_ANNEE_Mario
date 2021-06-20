@@ -217,7 +217,7 @@ class LevelPart1 extends Phaser.Scene{
     }
     create(){
 
-        this.musicFondMenu = this.sound.add('audio_fond_niveau')
+       /* this.musicFondMenu = this.sound.add('audio_fond_niveau')
         
         var musicConfig = {
             mute : false,
@@ -229,7 +229,7 @@ class LevelPart1 extends Phaser.Scene{
             delay : 0,
 
         }
-        this.musicFondMenu.play(musicConfig)
+        this.musicFondMenu.play(musicConfig)*/
 
         this.cameras.main.fadeIn(1000);
         
