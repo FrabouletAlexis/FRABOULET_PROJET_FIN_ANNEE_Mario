@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <title>Prog Fin D'année</title>
     <script src="phaser.js"></script>
+    <script src="EcranTitre.js"></script>
+    <script src="EcranFin.js"></script>
     <script src="LevelPart1.js"></script>
     <script src="LettreDebut.js"></script>
-    <script src="EcranTitre.js"></script>
     <script src="LevelPart2.js"></script>
     <script src="LevelPart3.js"></script>
     <script src="LevelPart4.js"></script>
@@ -48,7 +49,7 @@ var config = {
             debug: false
         }
     },
-    scene: [EcranTitre,LevelPart4,LevelPart1,LevelPart3,LettreDebut,LevelPart2 ]
+    scene: [EcranTitre,LevelPart4,EcranFin,LevelPart1,LevelPart3,LettreDebut,LevelPart2 ]
 };
 
 var game = new Phaser.Game(config);

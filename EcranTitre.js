@@ -19,6 +19,7 @@ class EcranTitre extends Phaser.Scene{
         this.load.image('parallaxe3','assets/parallaxe/parallaxe_3.png');
         this.load.image('parallaxe2','assets/parallaxe/parallaxe_2.png');
         this.load.image('parallaxe1','assets/parallaxe/parallaxe_1.png');
+        this.load.image('fond','assets/parallaxe/Fond.png');
 
         this.load.audio('audio_fond', 'assets/audio/music_fond.ogg')
         this.load.audio('bruit_fumi', 'assets/audio/bruit_attaque.wav')

@@ -7,7 +7,7 @@ class LevelPart2 extends Phaser.Scene{
     }
     preload(){
 
-        this.load.image('ecranTitre','assets/menu/ecran_titre.png');
+        /*this.load.image('ecranTitre','assets/menu/ecran_titre.png');
         this.load.spritesheet('boutonJouer','assets/menu/Bouton_Jouer.png', { frameWidth: 260, frameHeight: 108 });
         this.load.spritesheet('bontonCommande','assets/menu/Bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
         this.load.spritesheet('bontonSuite','assets/menu/Bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
@@ -71,7 +71,7 @@ class LevelPart2 extends Phaser.Scene{
         this.load.image('barreFumi2','assets/barre_fumi/Barre_fumi_2.png');
         this.load.image('barreFumi3','assets/barre_fumi/Barre_fumi_3.png');
         this.load.image('barreFumi4','assets/barre_fumi/Barre_fumi_4.png');
-        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');
+        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');*/
 
         this.load.image('tiles','assets/tiles/Decors.png');
         this.load.tilemapTiledJSON('mapPart2','assets/tiles/level_Part_2.json');
@@ -88,19 +88,20 @@ class LevelPart2 extends Phaser.Scene{
         this.bruitExecution = this.sound.add('bruit_execution')
         this.bruitFiole = this.sound.add('bruit_fiole')
 
-        this.add.image(4128/2, 2688/2, 'parallaxe3').setScrollFactor(0.5);
-        this.add.image(4128/2, 2688/2, 'parallaxe2').setScrollFactor(0.6);
-        this.add.image(4128/2, 2688/2, 'parallaxe1').setScrollFactor(0.9);
+        this.add.image(4128/2, 2688/2, 'parallaxe3').setScrollFactor(0.5).setDepth(0.5);
+        this.add.image(4128/2, 2688/2, 'parallaxe2').setScrollFactor(0.6).setDepth(0.5);
+        this.add.image(4128/2, 2688/2, 'parallaxe1').setScrollFactor(0.9).setDepth(0.5);
+        this.add.image(4128/2, 2688/2, 'fond').setScrollFactor(0.4).setDepth(0.4);
 
         const map = this.make.tilemap({key : 'mapPart2'});
         const tileset = map.addTilesetImage('Decors','tiles');
         
         
-        platforms = map.createLayer('Platforms',tileset, 0, 0).setDepth(1);
+        platforms = map.createLayer('Platforms',tileset, 0, 0).setDepth(2);
         secret = map.createLayer('Secret',tileset,0,0).setDepth(4);
-        fond = map.createLayer('Fond',tileset,0,0)
+        fond = map.createLayer('Fond',tileset,0,0).setDepth(1);
         zoneChargement = map.createLayer('Chargement',tileset,0,0)
-        marque = map.createLayer('Marque',tileset,0,0).setDepth(1.5);
+        marque = map.createLayer('Marque',tileset,0,0).setDepth(2.5);
 
         platforms.setCollisionByExclusion(-1,true)
         zoneChargement.setCollisionByExclusion(-1,true)
@@ -1003,7 +1004,7 @@ class LevelPart2 extends Phaser.Scene{
             
             //invincible = false;
             //console.log('invicilble'+ invincible)
-            fumerFX = this.add.sprite(player.x,player.y-125, 'explosionFumi');
+            fumerFX = this.add.sprite(player.x,player.y-125, 'explosionFumi').setDepth(2);
             
             setTimeout(function(){fumerFX.anims.play('exploseFumi',true)}, 0);
             setTimeout(function(){fumerFX.destroy();}, 1000);
@@ -1038,7 +1039,7 @@ class LevelPart2 extends Phaser.Scene{
 
             if (archer.tir == 0 && !archer.stun && archer.x - player.x < detectionArcher && archer.x - player.x > 0 && archer.y - player.y < 10 && archer.y - player.y > -10 && !attrape && !invincible && !gameOver){
                 
-                fleche = this.physics.add.sprite(archer.x,archer.y-40,'fleche');
+                fleche = this.physics.add.sprite(archer.x,archer.y-40,'fleche').setDepth(2);
                 fleche.body.allowGravity = false;
                 fleche.setFlipX(false);
                 archer.tir = 1;
@@ -1056,7 +1057,7 @@ class LevelPart2 extends Phaser.Scene{
             } 
             else if (archer.tir == 0 && !archer.stun && player.x - archer.x < detectionArcher && player.x - archer.x > 0 && archer.y - player.y < 10 && archer.y - player.y > -10 && !attrape && !invincible && !gameOver){
                 
-                fleche = this.physics.add.sprite(archer.x,archer.y-40,'fleche');
+                fleche = this.physics.add.sprite(archer.x,archer.y-40,'fleche').setDepth(2);
                 fleche.body.allowGravity = false;
                 fleche.setFlipX(true);
                 archer.tir = 1;
@@ -1351,7 +1352,7 @@ class LevelPart2 extends Phaser.Scene{
                     chimiste.setFlipX(false);
                     
 
-                    fiole = this.physics.add.sprite(chimiste.x, chimiste.y-40, 'fiole');
+                    fiole = this.physics.add.sprite(chimiste.x, chimiste.y-40, 'fiole').setDepth(2);
                     fiole.setVelocity(Phaser.Math.FloatBetween(-200, -400), Phaser.Math.FloatBetween(-200, -400));
                     fiole.setGravityY(200);
                     
@@ -1369,7 +1370,7 @@ class LevelPart2 extends Phaser.Scene{
                     chimiste.setVelocityX(0);
                     chimiste.setFlipX(true);
 
-                    fiole = this.physics.add.sprite(chimiste.x, chimiste.y-40, 'fiole');
+                    fiole = this.physics.add.sprite(chimiste.x, chimiste.y-40, 'fiole').setDepth(2);
                     fiole.setVelocity(Phaser.Math.FloatBetween(200, 400), Phaser.Math.FloatBetween(-200, -400));
                     fiole.setGravityY(200);
                     
@@ -1397,7 +1398,7 @@ class LevelPart2 extends Phaser.Scene{
                 chimiste.setVelocityX(0);
                 chimiste.setFlipX(false);
 
-                fiole = this.physics.add.sprite(chimiste.x, chimiste.y-40, 'fiole');
+                fiole = this.physics.add.sprite(chimiste.x, chimiste.y-40, 'fiole').setDepth(2);
                 fiole.setVelocity(Phaser.Math.FloatBetween(-200, -400), Phaser.Math.FloatBetween(-200, -400));
                 fiole.setGravityY(200);
                 
@@ -1414,7 +1415,7 @@ class LevelPart2 extends Phaser.Scene{
                 chimiste.setVelocityX(0);
                 chimiste.setFlipX(true);
 
-                fiole = this.physics.add.sprite(chimiste.x, chimiste.y-40, 'fiole');
+                fiole = this.physics.add.sprite(chimiste.x, chimiste.y-40, 'fiole').setDepth(2);
                 fiole.setVelocity(Phaser.Math.FloatBetween(200, 400), Phaser.Math.FloatBetween(-200, -400));
                 fiole.setGravityY(200);
                 
