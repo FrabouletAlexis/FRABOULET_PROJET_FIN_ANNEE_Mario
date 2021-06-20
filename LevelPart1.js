@@ -239,6 +239,9 @@ class LevelPart1 extends Phaser.Scene{
         this.bruitCoupColosse = this.sound.add('bruit_coup_colosse')
         this.bruitExecution = this.sound.add('bruit_execution')
         this.bruitFiole = this.sound.add('bruit_fiole')
+        this.bruitRecup = this.sound.add('bruit_recup')
+        this.bruitRecupCoffre = this.sound.add('bruit_recup_coffre')
+        this.bruitOuvrePorte = this.sound.add('bruit_ouvre_porte')
         
         this.add.image(4128/2, 2688/2, 'parallaxe3').setScrollFactor(0.5).setDepth(0.5);
         this.add.image(4128/2, 2688/2, 'parallaxe2').setScrollFactor(0.6).setDepth(0.5);
@@ -1849,39 +1852,41 @@ class LevelPart1 extends Phaser.Scene{
 
     function recupBombe (player,bombe){
         if (nbFumigene < 5){
+            this.bruitRecup.play()
             bombe.disableBody(true, true);
             bombe.body.destroy();
             nbFumigene += 1;
         }
     }
     function recupClef (player,clef){
+        this.bruitRecup.play()
         clef.disableBody(true, true);
         clef.body.destroy();
         clef1 = true;
     }
     function recupCoffreVert (player,coffre){
-        
+        this.bruitRecupCoffre.play()
         coffre.disableBody(true, true);
         coffre.body.destroy();
         coffreVert = true;
 
     }
     function recupCoffreBleu (player,coffre){
-        
+        this.bruitRecupCoffre.play()
         coffre.disableBody(true, true);
         coffre.body.destroy();
         coffreBleu = true;
 
     }
     function recupCoffreMarron (player,coffre){
-        
+        this.bruitRecupCoffre.play()
         coffre.disableBody(true, true);
         coffre.body.destroy();
         coffreMarron = true;
 
     }
     function recupCoffreRouge (player,coffre){
-        
+        this.bruitRecupCoffre.play()
         coffre.disableBody(true, true);
         coffre.body.destroy();
         coffreRouge = true;
@@ -1889,6 +1894,7 @@ class LevelPart1 extends Phaser.Scene{
     }
     function ouvrePorte (player,porte){
         if (clef1){
+            this.bruitOuvrePorte.play()
             porte.disableBody(true, true);
             porte.body.destroy(); 
         }

@@ -31,6 +31,9 @@ class EcranTitre extends Phaser.Scene{
         this.load.audio('bruit_coup_colosse', 'assets/audio/bruit_coup_colosse.wav')
         this.load.audio('bruit_execution', 'assets/audio/bruit_execution.mp3')
         this.load.audio('bruit_fiole', 'assets/audio/bruit_fiole.mp3')
+        this.load.audio('bruit_recup', 'assets/audio/bruit_recup_fumi.wav')
+        this.load.audio('bruit_recup_coffre', 'assets/audio/bruit_recup_coffre.wav')
+        this.load.audio('bruit_ouvre_porte', 'assets/audio/bruit_porte.ogg')
 
         this.load.spritesheet('boutonPause','assets/menu/Bouton_pause.png', { frameWidth: 55, frameHeight: 60 });
         this.load.image('menuPause','assets/menu/panneau_pause.png');

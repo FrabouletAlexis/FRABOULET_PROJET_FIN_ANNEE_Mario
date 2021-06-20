@@ -87,6 +87,9 @@ class LevelPart3 extends Phaser.Scene{
         this.bruitCoupColosse = this.sound.add('bruit_coup_colosse')
         this.bruitExecution = this.sound.add('bruit_execution')
         this.bruitFiole = this.sound.add('bruit_fiole')
+        this.bruitRecup = this.sound.add('bruit_recup')
+        this.bruitRecupCoffre = this.sound.add('bruit_recup_coffre')
+        this.bruitOuvrePorte = this.sound.add('bruit_ouvre_porte')
 
         this.add.image(4128/2, 2688/2, 'parallaxe3').setScrollFactor(0.5).setDepth(0.5);
         this.add.image(4128/2, 2688/2, 'parallaxe2').setScrollFactor(0.6).setDepth(0.5);
