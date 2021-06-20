@@ -39,6 +39,16 @@ class EcranTitre extends Phaser.Scene{
 
         this.load.image('texteChope','assets/tuto/texte_chope.png');
         this.load.image('texteChopeMobile','assets/tuto/texte_chope_mobile.png');
+        this.load.image('tutoDeplacement','assets/tuto/tuto_deplacement.png');
+        this.load.image('tutoDeplacementMobile','assets/tuto/tuto_deplacement_mobile.png');
+        this.load.image('tutoAttaque','assets/tuto/tuto_attaque.png');
+        this.load.image('tutoAttaqueMobile','assets/tuto/tuto_attaque_mobile.png');
+        this.load.image('tutoSaut','assets/tuto/tuto_saut.png');
+        this.load.image('tutoSautMobile','assets/tuto/tuto_saut_mobile.png');
+        this.load.image('tutoDash','assets/tuto/tuto_dash.png');
+        this.load.image('tutoDashMobile','assets/tuto/tuto_dash_mobile.png');
+        
+        
         this.load.image('texteDebut','assets/menu/Texte_debut.png');
 
         this.load.image('CoffreGris','assets/menu/coffre/Coffre_gris.png');

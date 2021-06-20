@@ -135,7 +135,77 @@ class LevelPart1 extends Phaser.Scene{
     }
     preload(){
 
+        this.load.image('ecranTitre','assets/menu/ecran_titre.png');
+        this.load.spritesheet('boutonJouer','assets/menu/Bouton_Jouer.png', { frameWidth: 260, frameHeight: 108 });
+        this.load.spritesheet('bontonCommande','assets/menu/Bouton_commande.png', { frameWidth: 208, frameHeight: 65 });
+        this.load.spritesheet('bontonSuite','assets/menu/Bouton_suite.png', { frameWidth: 75, frameHeight: 45 });
+        this.load.spritesheet('bontonChoixMobile','assets/menu/Bouton_choix_mobile.png', { frameWidth: 190, frameHeight: 50 });
+        this.load.image('panneauCommande','assets/menu/panneau_commande.png');
         
+        this.load.image('parallaxe3','assets/parallaxe/parallaxe_3.png');
+        this.load.image('parallaxe2','assets/parallaxe/parallaxe_2.png');
+        this.load.image('parallaxe1','assets/parallaxe/parallaxe_1.png');
+
+        this.load.audio('audio_fond', 'assets/audio/music_fond.ogg')
+        this.load.audio('bruit_fumi', 'assets/audio/bruit_attaque.wav')
+        //this.load.audio('bruit_fumi', 'assets/audio/bruit_fumi.mp3')
+        this.load.audio('bruit_attaque', 'assets/audio/bruit_attaque.wav')
+        this.load.audio('bruit_acide', 'assets/audio/bruit_acide.mp3')
+        this.load.audio('bruit_coup_colosse', 'assets/audio/bruit_coup_colosse.wav')
+        this.load.audio('bruit_execution', 'assets/audio/bruit_execution.mp3')
+        this.load.audio('bruit_fiole', 'assets/audio/bruit_fiole.mp3')
+
+        this.load.spritesheet('boutonPause','assets/menu/Bouton_pause.png', { frameWidth: 55, frameHeight: 60 });
+        this.load.image('menuPause','assets/menu/panneau_pause.png');
+        this.load.spritesheet('flecheDroite','assets/menu/bouton_mobile/Bouton_fleche_droite.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheGauche','assets/menu/bouton_mobile/Bouton_fleche_gauche.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheHaut','assets/menu/bouton_mobile/Bouton_fleche_haut.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('flecheBas','assets/menu/bouton_mobile/Bouton_fleche_bas.png', { frameWidth: 48, frameHeight: 48 });
+        this.load.spritesheet('boutonFumi','assets/menu/bouton_mobile/Bouton_fumi.png', { frameWidth: 48, frameHeight: 48 });
+
+        this.load.image('texteChope','assets/tuto/texte_chope.png');
+        this.load.image('tutoDeplacement','assets/tuto/tuto_deplacement.png');
+        this.load.image('tutoAttaque','assets/tuto/tuto_attaque.png');
+        this.load.image('tutoSaut','assets/tuto/tuto_saut.png');
+        this.load.image('tutoDash','assets/tuto/tuto_dash.png');
+        
+        this.load.image('texteChopeMobile','assets/tuto/texte_chope_mobile.png');
+        this.load.image('texteDebut','assets/menu/Texte_debut.png');
+
+        this.load.image('CoffreGris','assets/menu/coffre/Coffre_gris.png');
+        this.load.image('CoffreVert','assets/menu/coffre/coffre_vert_menu.png');
+        this.load.image('CoffreBleu','assets/menu/coffre/coffre_bleu_menu.png');
+        this.load.image('CoffreMarron','assets/menu/coffre/coffre_marron_menu.png');
+        this.load.image('CoffreRouge','assets/menu/coffre/coffre_rouge_menu.png');
+
+        this.load.spritesheet('boutonRetour','assets/menu/bouton_retour.png', { frameWidth: 208, frameHeight: 65 });
+
+        this.load.spritesheet('vinetta', 'assets/spritesheet/spritesheet_Vinetta.png', { frameWidth: 160, frameHeight: 150 });
+        this.load.spritesheet('vinetta_Mort_fiole', 'assets/spritesheet/spritesheet_Vinetta_Mort_fiole.png', { frameWidth: 235, frameHeight: 150 });
+        this.load.spritesheet('soldat', 'assets/spritesheet/spritesheet_Soldat.png', { frameWidth: 90, frameHeight: 160 });
+        this.load.spritesheet('colosse', 'assets/spritesheet/spritesheet_Colosse.png', { frameWidth: 120, frameHeight: 160 });
+        this.load.spritesheet('archer', 'assets/spritesheet/spritesheet_Tireur.png', { frameWidth: 87, frameHeight: 150 });
+        this.load.spritesheet('chimiste', 'assets/spritesheet/spritesheet_Chimiste.png', { frameWidth: 90, frameHeight: 150 });
+
+        this.load.spritesheet('explosionFumi', 'assets/FX/explosion_fumi.png', { frameWidth: 380, frameHeight: 400 });
+        this.load.image('fleche','assets/spritesheet/fleche.png');
+        this.load.image('bombe','assets/item/Bombe_Loot.png');
+        this.load.image('fiole','assets/item/Fiole.png');
+        this.load.image('clef','assets/item/clef.png');
+
+        this.load.image('tresorVert','assets/item/Coffre_Vert.png');
+        this.load.image('tresorBleu','assets/item/Coffre_Bleu.png');
+        this.load.image('tresorMarron','assets/item/Coffre_Marron.png');
+        this.load.image('tresorRouge','assets/item/Coffre_Rouge.png');
+
+        this.load.image('porte','assets/item/Porte_deverouille.png');
+        
+        this.load.image('barreFumi0','assets/barre_fumi/Barre_fumi_0.png');
+        this.load.image('barreFumi1','assets/barre_fumi/Barre_fumi_1.png');
+        this.load.image('barreFumi2','assets/barre_fumi/Barre_fumi_2.png');
+        this.load.image('barreFumi3','assets/barre_fumi/Barre_fumi_3.png');
+        this.load.image('barreFumi4','assets/barre_fumi/Barre_fumi_4.png');
+        this.load.image('barreFumi5','assets/barre_fumi/Barre_fumi_5.png');
 
         this.load.image('tiles','assets/tiles/Decors.png');
         this.load.tilemapTiledJSON('mapPart1','assets/tiles/level_Part_1.json');
@@ -153,10 +223,24 @@ class LevelPart1 extends Phaser.Scene{
         this.bruitCoupColosse = this.sound.add('bruit_coup_colosse')
         this.bruitExecution = this.sound.add('bruit_execution')
         this.bruitFiole = this.sound.add('bruit_fiole')
-
+        
         this.add.image(4128/2, 2688/2, 'parallaxe3').setScrollFactor(0.5);
         this.add.image(4128/2, 2688/2, 'parallaxe2').setScrollFactor(0.6);
         this.add.image(4128/2, 2688/2, 'parallaxe1').setScrollFactor(0.9);
+
+        if (commandeMobile){
+            this.add.image(150, 2260, 'tutoDeplacementMobile').setScrollFactor(1).setDepth(3);
+            this.add.image(450, 2000, 'tutoSautMobile').setScrollFactor(1).setDepth(3);
+            this.add.image(620, 1400, 'tutoAttaqueMobile').setScrollFactor(1).setDepth(3);
+            this.add.image(420, 1140, 'tutoDashMobile').setScrollFactor(1).setDepth(3);
+        }
+        else {
+            this.add.image(150, 2260, 'tutoDeplacement').setScrollFactor(1).setDepth(3);
+            this.add.image(450, 2000, 'tutoSaut').setScrollFactor(1).setDepth(3);
+            this.add.image(620, 1400, 'tutoAttaque').setScrollFactor(1).setDepth(3);
+            this.add.image(420, 1140, 'tutoDash').setScrollFactor(1).setDepth(3);
+        }
+        
 
         const map = this.make.tilemap({key : 'mapPart1'});
         const tileset = map.addTilesetImage('platforms','tiles');

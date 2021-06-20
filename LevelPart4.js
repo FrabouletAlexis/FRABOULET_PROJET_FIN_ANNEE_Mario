@@ -89,9 +89,18 @@ class LevelPart4 extends Phaser.Scene{
         this.bruitExecution = this.sound.add('bruit_execution')
         this.bruitFiole = this.sound.add('bruit_fiole')
 
-        this.add.image(4128/2, 2688/2, 'parallaxe3').setScrollFactor(0.5);
+        this.add.image(2970, 2688/2, 'parallaxe3').setScrollFactor(0.5);
+        this.add.image(9300, 2688/2, 'parallaxe3').setScrollFactor(0.5);
+
         this.add.image(4128/2, 2688/2, 'parallaxe2').setScrollFactor(0.6);
-        this.add.image(4128/2, 2688/2, 'parallaxe1').setScrollFactor(0.9);
+        this.add.image(5800, 2688/2, 'parallaxe2').setScrollFactor(0.6);
+        this.add.image(9600, 2688/2, 'parallaxe2').setScrollFactor(0.6);
+
+        this.add.image(650, 1488, 'parallaxe1').setScrollFactor(0.9);
+        //this.add.image(1700, 1488, 'parallaxe1').setScrollFactor(0.9);
+        this.add.image(5100, 1488, 'parallaxe1').setScrollFactor(0.9);
+        this.add.image(8000, 1488, 'parallaxe1').setScrollFactor(0.9);
+        this.add.image(10500, 1488, 'parallaxe1').setScrollFactor(0.9);
 
         const map = this.make.tilemap({key : 'mapPart4'});
         const tileset = map.addTilesetImage('Decors','tiles');
