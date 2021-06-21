@@ -122,7 +122,7 @@ var compteurAnimeFumerFX = restAnimeFumerFX;
 
  // item ///
 
-var lef1 = false;
+var clef1 = false;
 var coffreVert = false;
 var coffreBleu = false;
 var coffreMarron = false;
@@ -1078,6 +1078,7 @@ class LevelPart1 extends Phaser.Scene{
                 invincible = false;
                 nbFumigene = 5;
                 coffreVert = false;
+                clef1 = false;
                 restart = false;
                 
             }

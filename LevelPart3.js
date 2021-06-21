@@ -906,6 +906,7 @@ class LevelPart3 extends Phaser.Scene{
                 nbFumigene = 5;
                 coffreMarron = false;
                 restart = false;
+                clef1 = false;
                 
             }
 
